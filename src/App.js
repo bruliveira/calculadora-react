@@ -2,17 +2,7 @@ import { useState } from "react";
 import Button from "./components/Button";
 import Input from "./components/Input";
 import { Container, Content, Row } from "./styles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPlus,
-  faMinus,
-  faTimes,
-  faDivide,
-  faEquals,
-  faBackspace,
-  faC,
-  faPlusMinus,
-} from "@fortawesome/free-solid-svg-icons";
+import { Icon } from "@iconify/react";
 
 function App() {
   const [currentNumber, setCurrentNumber] = useState("");
@@ -102,58 +92,91 @@ function App() {
           }
         />
         <Row>
-          <Button label="CE" onClick={() => handleOperation("CE")} />
           <Button
-            label={<FontAwesomeIcon icon={faC} />}
+            label={<Icon icon="tabler:ce" />}
+            onClick={() => handleOperation("CE")}
+          />
+          <Button
+            label={<Icon icon="mdi:alpha-c-box-outline" />}
             onClick={handleOnClear}
           />
           <Button
-            label={<FontAwesomeIcon icon={faBackspace} />}
+            label={<Icon icon="mdi:backspace" />}
             onClick={handleBackspace}
           />
           <Button
-            label={<FontAwesomeIcon icon={faDivide} />}
+            label={<Icon icon="mdi:division" />}
             onClick={() => handleOperation("÷")}
           />
         </Row>
         <Row>
-          <Button label="7" onClick={() => handleAddNumber("7")} />
-          <Button label="8" onClick={() => handleAddNumber("8")} />
-          <Button label="9" onClick={() => handleAddNumber("9")} />
           <Button
-            label={<FontAwesomeIcon icon={faTimes} />}
+            label={<Icon icon="tabler:number-7" />}
+            onClick={() => handleAddNumber("7")}
+          />
+          <Button
+            label={<Icon icon="tabler:number-8" />}
+            onClick={() => handleAddNumber("8")}
+          />
+          <Button
+            label={<Icon icon="tabler:number-9" />}
+            onClick={() => handleAddNumber("9")}
+          />
+          <Button
+            label={<Icon icon="mdi:multiplication" />}
             onClick={() => handleOperation("×")}
           />
         </Row>
         <Row>
-          <Button label="4" onClick={() => handleAddNumber("4")} />
-          <Button label="5" onClick={() => handleAddNumber("5")} />
-          <Button label="6" onClick={() => handleAddNumber("6")} />
           <Button
-            label={<FontAwesomeIcon icon={faMinus} />}
+            label={<Icon icon="tabler:number-4" />}
+            onClick={() => handleAddNumber("4")}
+          />
+          <Button
+            label={<Icon icon="tabler:number-5" />}
+            onClick={() => handleAddNumber("5")}
+          />
+          <Button
+            label={<Icon icon="tabler:number-6" />}
+            onClick={() => handleAddNumber("6")}
+          />
+          <Button
+            label={<Icon icon="mdi:minus" />}
             onClick={() => handleOperation("−")}
           />
         </Row>
         <Row>
-          <Button label="3" onClick={() => handleAddNumber("3")} />
-          <Button label="2" onClick={() => handleAddNumber("2")} />
-          <Button label="1" onClick={() => handleAddNumber("1")} />
           <Button
-            label={<FontAwesomeIcon icon={faPlus} />}
+            label={<Icon icon="tabler:number-3" />}
+            onClick={() => handleAddNumber("3")}
+          />
+          <Button
+            label={<Icon icon="tabler:number-2" />}
+            onClick={() => handleAddNumber("2")}
+          />
+          <Button
+            label={<Icon icon="tabler:number-1" />}
+            onClick={() => handleAddNumber("1")}
+          />
+          <Button
+            label={<Icon icon="mdi:plus" />}
             onClick={() => handleOperation("+")}
           />
         </Row>
         <Row>
           <Button
-            label={<FontAwesomeIcon icon={faPlusMinus} />}
+            label={<Icon icon="mdi:plus-minus" />}
             onClick={handleToggleSign}
           />
-          <Button label="0" onClick={() => handleAddNumber("0")} />
-          <Button label="," onClick={() => handleAddNumber(".")} />
           <Button
-            label={<FontAwesomeIcon icon={faEquals} />}
-            onClick={handleEquals}
+            label={<Icon icon="tabler:number-0" />}
+            onClick={() => handleAddNumber("0")}
           />
+          <Button
+            label={<Icon icon="fluent:comma-20-filled" />}
+            onClick={() => handleAddNumber(".")}
+          />
+          <Button label={<Icon icon="mdi:equal" />} onClick={handleEquals} />
         </Row>
       </Content>
     </Container>
