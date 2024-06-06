@@ -25,6 +25,7 @@ export const InputContainer = styled.div`
   }
 
   @media (max-width: 480px) {
-    height: 10px;
+    height: 50px;
+    padding: 0%;
   }
 `;
